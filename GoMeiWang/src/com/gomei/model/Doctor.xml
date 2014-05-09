@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.gomei.model.Doctor">
+  	<insert id="add" parameterType="com.gomei.model.Doctor">
+  		insert into doctor (name, gender, age, hospital, email, phone, headpic, password, address, license, type) values (#{name}, #{gender}, #{age}, #{hospital}, #{email}, #{phone}, #{headpic}, #{password}, #{address}, #{license}, #{type})
+  	</insert>
+  	<select id="load" parameterType="int" resultType="com.gomei.model.Doctor">
+		select * from doctor where id = #{id}
+  	</select>
+  	
+  	<select id="list" resultType="com.gomei.model.Doctor">
+  		select * from doctor
+  	</select>
+  </mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.gomei.model.Ad">
+  	<insert id="add" parameterType="com.gomei.model.Ad">
+  		insert into ad (title, image, position, intro, type) values (#{title}, #{image},#{position},#{intro}, #{type})
+  	</insert>
+  	<select id="load" parameterType="int" resultType="com.gomei.model.Ad">
+  		select * from ad where id = #{id}
+  	</select>
+  	<select id="loadList" resultType="com.gomei.model.Ad">
+  		select * from ad
+  	</select>
+  	
+  	<select id="list" resultType="com.gomei.model.Ad">
+  		select * from ad
+  	</select>
+  	
+  	<select id="loadByType" parameterType="int" resultType="com.gomei.model.Ad">
+  		select * from ad where type = #{type} 
+  	</select>
+  </mapper>

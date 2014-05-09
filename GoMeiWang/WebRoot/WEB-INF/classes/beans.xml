@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+    
+    <!-- Ad -->
+    <bean id="ad" class="com.gomei.model.Ad"> </bean>
+    <bean id="adDao" class="com.gomei.dao.AdDao"/>
+
+    <bean id="adService" class="com.gomei.service.AdService">
+    	<property name="adDao" ref="adDao"></property>
+    </bean>
+    
+    <bean id="adController" class="com.gomei.controller.AdController" scope="prototype">
+    	<property name="adService" ref="adService"></property>
+    </bean>
+    
+    <!-- Star -->
+     <bean id="star" class="com.gomei.model.Star"></bean>
+    
+     <bean id="starDao" class="com.gomei.dao.StarDao"/>
+    
+    <bean id="starService" class="com.gomei.service.StarService">
+    	<property name="starDao" ref="starDao"></property>
+    </bean>
+    
+    <bean id="starController" class="com.gomei.controller.StarController" scope="prototype">
+    	<property name="starService" ref="starService"></property>
+    </bean>
+    
+    <!-- Article -->
+    <bean id="article" class="com.gomei.model.Article">
+    </bean>
+    <bean id="articleDao" class="com.gomei.dao.ArticleDao"/>
+
+    <bean id="articleService" class="com.gomei.service.ArticleService">
+    	<property name="articleDao" ref="articleDao"></property>
+    </bean>
+    
+    <bean id="articleController" class="com.gomei.controller.Controller" scope="prototype">
+    	<property name="articleService" ref="articleService"></property>
+    </bean>
+    
+    <!-- Comment -->
+    <bean id="comment" class="com.gomei.model.Comment"> </bean>
+    <bean id="commentDao" class="com.gomei.dao.CommentDao"/>
+
+    <bean id="commentService" class="com.gomei.service.CommentService">
+    	<property name="commentDao" ref="commentDao"></property>
+    </bean>
+    
+    <bean id="commentController" class="com.gomei.controller.Controller" scope="prototype">
+    	<property name="commentService" ref="commentService"></property>
+    </bean>
+    
+    <!-- Doctor -->
+    <bean id="doctor" class="com.gomei.model.Doctor"> </bean>
+    <bean id="doctorDao" class="com.gomei.dao.DoctorDao"/>
+
+    <bean id="doctorService" class="com.gomei.service.DoctorService">
+    	<property name="doctorDao" ref="doctorDao"></property>
+    </bean>
+    
+    <bean id="doctorController" class="com.gomei.controller.Controller" scope="prototype">
+    	<property name="doctorService" ref="doctorService"></property>
+    </bean>
+    
+    <!-- Hospital -->
+    <bean id="hospital" class="com.gomei.model.Hospital"> </bean>
+    <bean id="hospitalDao" class="com.gomei.dao.HospitalDao"/>
+
+    <bean id="hospitalService" class="com.gomei.service.HospitalService">
+    	<property name="hospitalDao" ref="hospitalDao"></property>
+    </bean>
+    
+    <bean id="hospitalController" class="com.gomei.controller.Controller" scope="prototype">
+    	<property name="hospitalService" ref="hospitalService"></property>
+    </bean>
+    
+    <!-- Question -->
+    <bean id="question" class="com.gomei.model.Question"> </bean>
+    <bean id="questionDao" class="com.gomei.dao.QuestionDao"/>
+
+    <bean id="questionService" class="com.gomei.service.QuestionService">
+    	<property name="questionDao" ref="questionDao"></property>
+    </bean>
+    
+    <bean id="questionController" class="com.gomei.controller.Controller" scope="prototype">
+    	<property name="questionService" ref="questionService"></property>
+    </bean>
+    
+     <!-- Topic -->
+    <bean id="topic" class="com.gomei.model.Topic"> </bean>
+    <bean id="topicDao" class="com.gomei.dao.TopicDao"/>
+
+    <bean id="topicService" class="com.gomei.service.TopicService">
+    	<property name="topicDao" ref="topicDao"></property>
+    </bean>
+    
+    <bean id="topicController" class="com.gomei.controller.Controller" scope="prototype">
+    	<property name="topicService" ref="topicService"></property>
+    </bean>
+    
+    
+     <!-- User -->
+    <bean id="user" class="com.gomei.model.User"> </bean>
+    <bean id="userDao" class="com.gomei.dao.UserDao"/>
+
+    <bean id="userService" class="com.gomei.service.UserService">
+    	<property name="userDao" ref="userDao"></property>
+    </bean>
+    
+    <bean id="userController" class="com.gomei.controller.Controller" scope="prototype">
+    	<property name="userService" ref="userService"></property>
+    </bean>
+    
+    
+    
+    <!--  index page -->
+    <bean id="indexController" class="com.gomei.controller.IndexController" scope="prototype">
+    	<property name="ad" ref="ad"></property>
+    	<property name="star" ref="star"></property>
+    	<property name="adService" ref="adService"></property>
+    	<property name="starService" ref="starService"></property>
+    </bean>
+</beans>
+    

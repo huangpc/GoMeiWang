@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="GoMeiWang"
+  id="myeclipse.1398239560988"
+  context-root="/GoMeiWang"
+  j2ee-spec="5.0"
+  archive="GoMeiWang.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

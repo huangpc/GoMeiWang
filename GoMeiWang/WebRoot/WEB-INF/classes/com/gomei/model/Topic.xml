@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.gomei.model.Topic">
+  	<insert id="add" parameterType="com.gomei.model.Topic">
+  		insert into topic (title, intro, comment, content, type, article) values (#{title}, #{intro}, #{comment}, #{content}, #{type}. #{article)
+  	</insert>
+  	<select id="load" parameterType="int" resultType="com.gomei.model.Topic">
+		select * from topic where id = #{id}
+  	</select>
+  	
+  	<select id="list" resultType="com.gomei.model.Topic">
+  		select * from topic
+  	</select>
+  	
+  	<select id="loadByType" parameterType="int" resultType="com.gomei.model.Topic">
+  		select * from topic where type = #{type}
+  	</select>
+    
+    
+  	<select id="loadTopic" parameterType="int" resultType="com.gomei.model.Topic">
+  		select * from topic where id = #{id}
+  	</select>
+  </mapper>
